@@ -1,0 +1,12 @@
+version: '2'
+services:
+    flyway-example-postgresql:
+        image: postgres:9.5.4
+        environment:
+            - POSTGRES_USER=root
+            - POSTGRES_PASSWORD=
+            - POSTGRES_DB=flyway
+        ports:
+            - 5432:5432
+
+# docker-machine env --shell cmd default
