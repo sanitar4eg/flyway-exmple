@@ -49,4 +49,13 @@ public class RestApplicationTest {
 			.andExpect(jsonPath("_embedded.characters", hasSize(7)));
 	}
 
+	@Test
+	public void findByNameGadget() throws Exception {
+		this.mvc.perform(
+			get("/api/gadgets/search/findByNameIgnoringCase?name=gwendolyn"))
+			.andExpect(status().isOk())
+			.andExpect(jsonPath("planet", equalTo("Gazorpazorp")))
+			.andExpect(jsonPath("type", equalTo("Sex robot")));
+	}
+
 }
