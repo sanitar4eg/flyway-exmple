@@ -37,6 +37,11 @@
 			<version>9.4.1212</version>
 		</dependency>
 		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
 			<scope>test</scope>
@@ -48,4 +53,21 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>4.1.2</version>
+				<configuration>
+					<driver>org.postgresql.Driver</driver>
+					<url>jdbc:postgresql://192.168.99.100:5432/test</url>
+					<user>root</user>
+					<cleanDisabled>false</cleanDisabled>
+					<skip>false</skip>
+					<!--<table>new_schema_version</table>-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

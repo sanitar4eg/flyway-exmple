@@ -1,3 +1,12 @@
+CREATE TABLE character (
+  id      BIGINT,
+  NAME    VARCHAR(255),
+  species VARCHAR(255),
+  age     INTEGER,
+  STATUS  VARCHAR(255),
+  PRIMARY KEY (id)
+);
+
 insert into character
 values (1, 'Rick Sanchez', 'Human', 60, 'Alive');
 
